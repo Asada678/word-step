@@ -2,6 +2,7 @@ import { Inter as FontSans } from "next/font/google";
 import Header from "./header";
 
 import "@/styles/globals.css";
+import { cn } from "@/lib/utils";
 // import { siteConfig } from "@/config/site"
 // import { absoluteUrl, cn } from "@/lib/utils"
 // import { Analytics } from "@/components/analytics"
@@ -69,18 +70,18 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
-      lang="en"
-      // className={cn("bg-white font-sans text-slate-900 antialiased", fontSans.variable)}
+      lang="ja"
+      className={cn("bg-white font-sans text-slate-900 antialiased", fontSans.variable)}
     >
       <head />
       <body>
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main>{children}</main>
+          {children}
         </div>
-        {/* <Analytics />
+        {/*
         <Toaster />
-        <TailwindIndicator /> */}
+      */}
       </body>
     </html>
   );
